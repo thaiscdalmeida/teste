@@ -1,0 +1,882 @@
+/* ================================
+   SISTEMA DE DESIGN (CSS VARIABLES)
+================================ */
+:root {
+  --cor-principal: #2e7d32;
+  --cor-secundaria: #c8e6c9;
+  --cor-texto: #333;
+  --cor-fundo: #f5fff5;
+  --branco: #ffffff;
+  --radius: 10px;
+  --sombra: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   ESTILO GERAL
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+/* ================================
+   CABEÇALHO
+================================ */
+header {
+  background-color: var(--cor-principal);
+  color: var(--branco);
+  padding: 15px 0;
+  box-shadow: var(--sombra);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.ativo {
+  text-decoration: underline;
+}
+
+/* ================================
+   HERO / SEÇÕES PRINCIPAIS
+================================ */
+.hero {
+  background-color: var(--cor-secundaria);
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.hero h2 {
+  color: var(--cor-principal);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Título menor para a seção de projetos */
+/* ================================
+   TIPOGRAFIA / HIERARQUIA
+   Define tamanhos e espaçamentos coerentes para h1, h2, h3, parágrafos e nav
+================================ */
+
+/* Cabeçalho principal */
+header h1 {
+  font-size: 1.6rem; /* destaque moderado no cabeçalho */
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/* Seção de projetos (título) */
+.projetos h2 {
+  font-size: 1.25rem; /* secundário, menor que h1 */
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: var(--cor-principal);
+  line-height: 1.2;
+}
+
+/* Títulos dos cards */
+.card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: var(--cor-principal);
+}
+
+/* Parágrafos dos cards e corpo */
+.card p,
+section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 12px 0;
+}
+
+/* Navegação */
+nav ul li a {
+  font-size: 0.95rem;
+}
+
+/* Ajustes responsivos para hierarquia (reduzir um pouco em telas pequenas) */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.4rem; }
+  .projetos h2 { font-size: 1.1rem; }
+  .card h3 { font-size: 1rem; }
+  .card p { font-size: 0.95rem; }
+}
+
+/* ================================
+   CARDS DE PROJETOS (lado a lado)
+   Usando flex para controlar colunas e comportamento responsivo
+================================ */
+.projetos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;            /* permite quebra em telas menores */
+  justify-content: center;   /* centraliza a linha de cards */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* Força largura base para cada card (controle de colunas) */
+.projetos .card {
+  flex: 0 1 360px; /* não cresce além do necessário, base 360px */
+  max-width: 380px;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+}
+
+/* ================================
+   FORMULÁRIO DE CONTATO
+================================ */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--branco);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+fieldset {
+  border: none;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 20px;
+  background-color: var(--cor-principal);
+  color: var(--branco);
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+/* ================================
+   ASIDE E BOTÕES
+================================ */
+.botao {
+  display: inline-block;
+  background: var(--cor-principal);
+  color: var(--branco);
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background: #1b5e20;
+}
+
+/* ================================
+   RODAPÉ
+================================ */
+footer {
+  background-color: var(--cor-principal);
+  color: var(--branco);
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  box-shadow: var(--sombra);
+}
+
+address {
+  font-style: normal;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+/* ======== MODO ESCURO ======== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1b5e20;
+}
+
+/* ======== BOTÃO MODO ======== */
+#modo-btn {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 5px 8px;
+  transition: 0.3s;
+}
+
+#modo-btn:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* ======== BOTÃO VOLTAR AO TOPO ======== */
+#btnTopo {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--cor-principal);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: 0.3s;
+}
+
+/* ================================
+   GALERIA DE IMAGENS (lado a lado)
+================================ */
+.card .gallery {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.card .gallery img {
+  /* Tamanho fixo e maior no desktop */
+  width: calc(33.333% - 10px); /* 3 imagens por linha com gap */
+  min-width: 200px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+}
+
+.card .gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Ajustes intermediários para telas menores */
+@media (max-width: 1100px) {
+  .card .gallery img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Duas colunas de imagens */
+  .card .gallery img {
+    width: calc(50% - 7px);
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Em telas muito pequenas, cada imagem ocupa a largura total do card */
+  .card .gallery img {
+    width: 100%;
+    height: 240px;
+  }
+}
+
+#btnTopo:hover {
+  background-color: #1b5e20;
+}
+
+/* ================================
+   CATEGORIAS E FILTROS
+================================ */
+.categorias {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.filtros .botao {
+  background: var(--cor-fundo);
+  color: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filtros .botao.ativo,
+.filtros .botao:hover {
+  background: var(--cor-principal);
+  color: var(--branco);
+}
+
+/* ================================
+   CARDS DE PROJETOS
+================================ */
+.projetos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projeto-card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+.projeto-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.projeto-header h3 {
+  margin: 15px;
+  color: var(--cor-principal);
+}
+
+.projeto-body {
+  padding: 15px;
+}
+
+.projeto-info {
+  background: var(--cor-fundo);
+  padding: 10px;
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+
+.projeto-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.projeto-descricao {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+/* ================================
+   INDICADORES
+================================ */
+.indicadores {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.indicador {
+  text-align: center;
+}
+
+.indicador .numero {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cor-principal);
+}
+
+.indicador .legenda {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ================================
+   GALERIA DE FOTOS
+================================ */
+.galeria-projetos {
+  padding: 40px 20px;
+  background: var(--cor-fundo);
+  margin: 40px 0;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.3s;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   INDICADORES DE IMPACTO
+================================ */
+.impacto {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.indicadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.indicador-card {
+  background: var(--branco);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+.indicador-card .numero {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--cor-principal);
+  margin-bottom: 5px;
+}
+
+.indicador-card .legenda {
+  display: block;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.indicador-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  .filtros {
+    gap: 8px;
+  }
+
+  .filtros .botao {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .projeto-header img {
+    height: 160px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .indicador-card .numero {
+    font-size: 1.8rem;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.cards .card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.historico, .equipe, .transparencia {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.historico img, .equipe img, .transparencia img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.transparencia .botao {
+  margin-top: 15px;
+}
+
+/* ================================
+   FORMULÁRIO DE DOAÇÃO
+================================ */
+.doacao {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.doacao h2 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+}
+
+.opcoes-pagamento {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.opcoes-pagamento label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.botao-doar {
+  background-color: var(--cor-principal);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-doar:hover {
+  background-color: #1b5e20;
+}
+
+/* Modal de Agradecimento */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--branco);
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--sombra);
+}
+
+.modal-content h3 {
+  color: var(--cor-principal);
+  margin-bottom: 15px;
+}
+
+.valor-doado {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: var(--cor-principal);
+  font-weight: bold;
+}
+
+.botao-fechar {
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-fechar:hover {
+  background-color: #1b5e20;
+}
+
+/* ================================
+   ESTILOS PARA AS NOVAS SEÇÕES
+   Missão/Visão/Valores, Histórico, Equipe, Transparência
+================================ */
+.missao-valores {
+  padding: 30px 20px;
+}
+
+.missao-valores h2,
+.historico h2,
+.equipe h2,
+.transparencia h2 {
+  font-size: 1.4rem;
+  color: var(--cor-principal);
+  margin-bottom: 14px;
+}
+
+.missao-valores .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.missao-valores .card {
+  text-align: left;
+  padding: 18px;
+}
+
+.historico p {
+  max-width: 800px;
+  margin: 0 auto 16px;
+}
+
+.equipe {
+  padding: 30px 20px;
+}
+
+.equipe .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.equipe .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.equipe .card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.transparencia {
+  padding: 30px 20px;
+}
+
+.transparencia div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.transparencia .botao {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .missao-valores .card,
+  .equipe .card {
+    padding: 12px;
+  }
+
+  .equipe .card img {
+    height: 160px;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.progresso {
+  background-color: #c8e6c9;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.barra {
+  background-color: #2e7d32;
+  height: 100%;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+.mensagem-agradecimento-vol {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #d1c4e9; /* roxo claro */
+  color: #4a148c; /* roxo escuro */
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  animation: aparecer 0.5s ease-in-out;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seja Voluntário - Aprender e Viver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="./img/logo1.jpg" alt="Logo Aprender e Viver" class="logo">
+      <h1>Aprender e Viver</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projeto.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="modo-btn">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Introdução ao voluntariado -->
+    <section class="intro-voluntario">
+      <h2>Seja um Voluntário</h2>
+      <p>Participe das nossas atividades e ajude a transformar vidas na comunidade. Temos diversas áreas para atuação:</p>
+    </section>
+
+    <!-- Áreas de atuação -->
+    <section class="areas">
+      <h3>Áreas de Atuação</h3>
+      <div class="cards">
+        <article class="card">
+          <img src="./img/b1.jpeg" alt="Ensino e apoio escolar">
+          <h4>Ensino e Apoio Escolar</h4>
+          <p>Ajudar crianças e adolescentes nas tarefas escolares,  de reforço e incentivo à leitura.</p>
+        </article>
+
+        <article class="card">
+          <img src="./img/id1 (4).jpeg" alt="Oficinas culturais e artesanato">
+          <h4>Oficinas Culturais e Artesanato</h4>
+          <p>Ministrar ou apoiar oficinas de crochê, tricô, pintura e outras atividades manuais para idosos e jovens.</p>
+        </article>
+
+        <article class="card">
+          <img src="./img/mar2.jpeg" alt="Apoio em eventos e esportes">
+          <h4>Eventos e Esportes</h4>
+          <p>Auxiliar em aulas de artes marciais, atividades esportivas e eventos da ONG.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Formulário de inscrição de voluntário -->
+    <section class="form-voluntario">
+      <h3>Inscreva-se como Voluntário</h3>
+      <form id="formVoluntario">
+        <label for="nomeVol">Nome Completo:</label>
+        <input type="text" id="nomeVol" name="nomeVol" required>
+
+        <label for="emailVol">E-mail:</label>
+        <input type="email" id="emailVol" name="emailVol" required>
+
+        <label for="telefoneVol">Telefone:</label>
+        <input type="tel" id="telefoneVol" name="telefoneVol" required>
+
+        <label for="areaVol">Área de Interesse:</label>
+        <select id="areaVol" name="areaVol" required>
+          <option value="">Selecione...</option>
+          <option value="ensino">Ensino e Apoio Escolar</option>
+          <option value="oficinas">Oficinas Culturais e Artesanato</option>
+          <option value="eventos">Eventos e Esportes</option>
+          <option value="outros">Outros</option>
+        </select>
+
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      <p><strong>Endereço:</strong> Rua das Flores, 123 – São Paulo/SP</p>
+      <p><strong>Email:</strong> contato@aprendereviver.org</p>
+      <p><strong>Telefone:</strong> (11) 99999-9999</p>
+    </address>
+    <p>© 2025 Aprender e Viver | Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

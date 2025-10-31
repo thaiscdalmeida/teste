@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Aprender e Viver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Aprender e Viver</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projeto.html">Projetos</a></li>
+          <li><a href="contato.html" class="ativo">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="modo-btn">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="contato">
+      <h2>Fale Conosco</h2>
+      <form id="formContato">
+        <fieldset>
+          <legend>Envie sua mensagem</legend>
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="doacao">
+      <h2>Faça uma Doação</h2>
+      <p>Sua contribuição é fundamental para mantermos nossos projetos. Aceitamos doações de:</p>
+      <ul class="lista-doacoes">
+        <li>📚 Livros</li>
+        <li>🥫 Alimentos não perecíveis</li>
+        <li>👕 Roupas em bom estado</li>
+        <li>📏 Material escolar</li>
+      </ul>
+      
+      <form id="formDoacao">
+        <fieldset>
+          <legend>Dados da Doação</legend>
+
+          <label for="nomeDoador">Nome:</label>
+          <input type="text" id="nomeDoador" name="nomeDoador" required>
+
+          <label for="emailDoador">E-mail:</label>
+          <input type="email" id="emailDoador" name="emailDoador" required>
+
+          <label for="telefoneDoador">Telefone:</label>
+          <input type="tel" id="telefoneDoador" name="telefoneDoador" required>
+
+          <label for="tipoItem">Tipo de Doação:</label>
+          <select id="tipoItem" name="tipoItem" required>
+            <option value="">Selecione o tipo de doação</option>
+            <option value="livros">Livros</option>
+            <option value="alimentos">Alimentos não perecíveis</option>
+            <option value="roupas">Roupas</option>
+            <option value="material">Material escolar</option>
+          </select>
+
+          <label for="descricaoItem">Descrição dos itens:</label>
+          <textarea id="descricaoItem" name="descricaoItem" rows="3" placeholder="Descreva os itens que você deseja doar (quantidade, estado de conservação, etc.)" required></textarea>
+
+          <label for="entrega">Forma de Entrega:</label>
+          <div class="opcoes-entrega">
+            <label>
+              <input type="radio" name="entrega" value="local" required>
+              Entregar na ONG
+            </label>
+            <label>
+              <input type="radio" name="entrega" value="retirada">
+              Solicitar retirada
+            </label>
+          </div>
+
+          <button type="submit" class="botao-doar">Confirmar Doação</button>
+        </fieldset>
+      </form>
+      
+      <!-- A mensagem de agradecimento aparecerá aqui -->
+    </section>
+  </main>
+
+  <button id="btnTopo">⬆</button>
+
+  <footer>
+    <p>© 2025 Aprender e Viver | Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
